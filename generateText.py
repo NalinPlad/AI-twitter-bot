@@ -5,11 +5,12 @@ from textgenrnn import textgenrnn
 
 def main():
 
-    textgen = textgenrnn('/Users/ajitharaiza-singh/Downloads/coding/piffleManTwitterBot/realDonaldTrump_dril_twitter_weights.hdf5')
+    # type in the path of your .hdf5 file
+    textgen = textgenrnn('realDonaldTrump_dril_twitter_weights.hdf5')
 
     # Authenticate to Twitter order: consumer_key, consumer_secret, access_token, access_token_secret
-    auth = tweepy.OAuthHandler("FX4YidWBPnFL3XQr3EJ7s6jMZ", "JyGkyx5N0IrM6SYE1H6D6fef5HBPDxws17imVO2TXXakIBADxJ")
-    auth.set_access_token("1255230049831264261-QaVaan6ZZ9NFeGW8id9N46gxs5CrEC", "IJWL5QHadzMgB85rTDJDHhxG86oFj3PXHHGh8aYnfD643")
+    auth = tweepy.OAuthHandler("CONSUMER_KEY", "CONSUMER_SECRET")
+    auth.set_access_token("ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
 
     # Create API object
     api = tweepy.API(auth)
