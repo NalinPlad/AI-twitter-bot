@@ -20,17 +20,21 @@ def main():
 
         genData = textgen.generate(return_as_list = True, temperature=0.2)
 
-
-        # Create a tweet
-        if len(genData) > 280:
-            finalTweet = genData[0:280]
-        else:
-            finalTweet = genData
-
-        api.update_status(finalTweet)
+        finalTweet = genData[0:279]
         print(finalTweet)
 
+        try:
+            api.update_status(finalTweet)
+        except KeyError:
+            continue
+        except:
+            continue
+
         time.sleep(30)
+
+
+
+        
 
 
 
